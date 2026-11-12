@@ -31,7 +31,7 @@ export interface ZohoInterface {
         getFields: (Object: { Entity: string }) => Promise<any>;
       };
       UI: {
-        Resize: (Object: { width: number; height: number }) => Promise<any>;
+        Resize: (Object: { width: string; height: string }) => Promise<any>;
         Dialer: {
           maximize: () => Promise<any>;
           minimize: () => Promise<any>;

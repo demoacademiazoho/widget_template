@@ -12,7 +12,7 @@ import { useWidgetConfigStore } from '@/stores/widgetConfig';
         console.info('Hello world from ZOHO!', _params)
         paramsStore.updateParams(_params)
         if ((_params as any)?.ButtonPosition === 'DetailView') {
-          try { await resizePopup(700, 1300) } catch (_) { /* not available in all contexts */ }
+          try { await resizePopup("100%", "100%") } catch (_) { /* not available in all contexts */ }
         }
         resolve(_params)
       })
@@ -140,7 +140,7 @@ import { useWidgetConfigStore } from '@/stores/widgetConfig';
   
   // UI's
   
-  export async function resizePopup(height: number, width: number) {
+  export async function resizePopup(height: string, width: string) {
     const response = await ZOHO.CRM.UI.Resize({ height, width });
     return response;
   }
